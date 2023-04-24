@@ -122,8 +122,8 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	unsigned long int in_num = nu;
 
 	UNUSED(width);
-	num= convert_size_unsgnd(nu, size);
-	if (num == 0)
+	nu = convert_size_unsgnd(nu, size);
+	if (nu == 0)
 		buffer[a--] = '0';
 	buffer[BUFF_SIZE - 1] = '\0';
 	while (nu > 0)
@@ -133,8 +133,8 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	}
 	if (flags & F_HASH && in_num != 0)
 	{
-		buffer[i--] = flag_ch;
-		buffer[i--] = '0';
+		buffer[a--] = flag_ch;
+		buffer[a--] = '0';
 	}
 	a++;
 	return (write_unsgnd(0, a, buffer, flags, width, precision, size));
